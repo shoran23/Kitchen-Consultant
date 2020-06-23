@@ -1,0 +1,48 @@
+@import '_variables.scss';
+
+.inventory {
+
+}
+
+.inventory-navigation {
+    height: 100px;
+    background-color: $secondary_color;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventory-title {
+    font-family: $cursive_font_stack;
+    font-size: $title_font_size;
+}
+
+.inventory-navigation-list {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inventory-navigation-list-item {
+    font-family: $primary_font_stack;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: $primary_font_color;
+    size: $navigation_font_size;
+}
+
+.inventory-search-return-valid {
+    display: flex;
+    flex-direction: column;
+}
+
+.inventory-search-item {
+    display: flex;
+    flex-direction: row;
+}

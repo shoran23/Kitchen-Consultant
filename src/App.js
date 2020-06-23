@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/Header.js'
 import './App.css';
+import './css/header.css'
+import './css/inventory.css'
+import Navigation from './components/Navigation.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const spoonacularBaseURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/"
+
+class App extends React.Component {
+  state = {
+    loggedIn: false
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header 
+          loggedIn={this.state.loggedIn}
+        />
+        {this.state.showNav ?
+          <Navigation 
+              spoonacularBaseURL={spoonacularBaseURL}
+              showNav={this.state.showNav}
+          />
+        :
+            <div></div>    
+        }
+      </div>
+    );
+  }
 }
-
 export default App;
