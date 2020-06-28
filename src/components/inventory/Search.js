@@ -5,12 +5,15 @@ import FormInputRow from '../form_components/FormInputRow.js'
 class SearchItem extends React.Component {
     handleGetDescription = id => {
         this.props.searchApiForProductInfo(id)
+        this.props.handleModalView('food-description')
     }
     handleGetNutrition = id => {
-        this.props.searchApiForProductInfo(id)   
+        this.props.searchApiForProductInfo(id)
+        this.props.handleModalView('food-nutrition')   
     }
     handleGetIngredients = id => {
         this.props.searchApiForProductInfo(id)
+        this.props.handleModalView('add-to-inventory')
     }
     render() {
         return(
@@ -45,7 +48,6 @@ class SearchItem extends React.Component {
 }
 class Search extends React.Component {
     render() {
-        console.log('Props: ',this.props.searchResults)
         return(
             <div className='inventory-search'>
                 <div className='form-column'>
@@ -79,7 +81,9 @@ class Search extends React.Component {
                                     key={result.id}
                                     title={result.title}
                                     id={result.id}
+                                    handleChange={this.props.handleChange}
                                     searchApiForProductInfo={this.props.searchApiForProductInfo}
+                                    handleModalView={this.props.handleModalView}
                                 />
                             ))}
                             <button 
