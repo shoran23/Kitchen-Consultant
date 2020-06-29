@@ -1,3 +1,10 @@
+.inventory-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .inventory-navigation {
   height: 100px;
   background-color: whitesmoke;
@@ -39,6 +46,15 @@ a {
 .inventory-search-item {
   display: flex;
   flex-direction: row;
+}
+
+.inventory-search {
+  width: 100%;
+  display: flex;
+}
+
+#inventory-search {
+  width: 100%;
 }
 
 /*# sourceMappingURL=inventory.css.map */

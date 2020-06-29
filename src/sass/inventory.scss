@@ -1,7 +1,10 @@
 @import '_variables.scss';
 
-.inventory {
-
+.inventory-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .inventory-navigation {
@@ -45,4 +48,13 @@ a {
 .inventory-search-item {
     display: flex;
     flex-direction: row;
+}
+
+.inventory-search {
+    width: 100%;
+    display: flex;
+}
+
+#inventory-search {
+    width: 100%;
 }

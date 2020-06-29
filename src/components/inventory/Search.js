@@ -50,54 +50,56 @@ class Search extends React.Component {
     render() {
         return(
             <div className='inventory-search'>
-                <div className='form-column'>
-                    <div className='form-row'>
-                        <FormInputColumn 
-                            type='text'
-                            label='Search for Grocery Products'
-                            name='searchString'
-                            id='searchString'
-                            value={this.props.searchString}
-                            onChange={this.props.handleChange}
-                        />
-                        <button className='inventory-search-button' onClick={() => this.props.searchAPIForGroceryProduct(this.props.searchResultsNum,this.props.searchString)}>
-                            Search
-                        </button>
-                    </div>
-                    <FormInputRow 
-                        type='number'
-                        label='Number of Results'
-                        name='searchResultsNum'
-                        id='searchResultsNum'
-                        value={this.props.searchResultsNum}
-                        onChange={this.props.handleChange}
-                    />
-                </div>
-                <div className='inventory-search-results'>
-                    {this.props.searchResults.products ?
-                        <div className='inventory-search-results-valid'>
-                            {this.props.searchResults.products.map((result,index) => (
-                                <SearchItem 
-                                    key={result.id}
-                                    title={result.title}
-                                    id={result.id}
-                                    handleChange={this.props.handleChange}
-                                    searchApiForProductInfo={this.props.searchApiForProductInfo}
-                                    handleModalView={this.props.handleModalView}
-                                />
-                            ))}
-                            <button 
-                                className='inventory-search-results-number'
-                                onClick={() => this.props.searchAPIForGroceryProduct(this.props.searchResults.totalProducts,this.props.searchString)}
-                            >
-                                View All Available Products ({this.props.searchResults.totalProducts})
+                <div className='form-column' id='inventory-search'>
+                    <div className='form-column'>
+                        <div className='form-row'>
+                            <FormInputColumn 
+                                type='text'
+                                label='Search for Grocery Products'
+                                name='searchString'
+                                id='searchString'
+                                value={this.props.searchString}
+                                onChange={this.props.handleChange}
+                            />
+                            <button className='inventory-search-button' onClick={() => this.props.searchAPIForGroceryProduct(this.props.searchResultsNum,this.props.searchString)}>
+                                Search
                             </button>
                         </div>
-                    :
-                        <div className='inventory-search-results-invalid'>
-                            No Search Results
-                        </div>
-                    }
+                        <FormInputRow 
+                            type='number'
+                            label='Number of Results'
+                            name='searchResultsNum'
+                            id='searchResultsNum'
+                            value={this.props.searchResultsNum}
+                            onChange={this.props.handleChange}
+                        />
+                    </div>
+                    <div className='inventory-search-results'>
+                        {this.props.searchResults.products ?
+                            <div className='inventory-search-results-valid'>
+                                {this.props.searchResults.products.map((result,index) => (
+                                    <SearchItem 
+                                        key={result.id}
+                                        title={result.title}
+                                        id={result.id}
+                                        handleChange={this.props.handleChange}
+                                        searchApiForProductInfo={this.props.searchApiForProductInfo}
+                                        handleModalView={this.props.handleModalView}
+                                    />
+                                ))}
+                                <button 
+                                    className='inventory-search-results-number'
+                                    onClick={() => this.props.searchAPIForGroceryProduct(this.props.searchResults.totalProducts,this.props.searchString)}
+                                >
+                                    View All Available Products ({this.props.searchResults.totalProducts})
+                                </button>
+                            </div>
+                        :
+                            <div className='inventory-search-results-invalid'>
+                                No Search Results
+                            </div>
+                        }
+                    </div>
                 </div>
             </div>
         )

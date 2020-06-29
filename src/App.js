@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './components/Header.js'
-import './App.css';
+import './App.css'
 import './css/header.css'
 import './css/inventory.css'
+import './css/form.css'
 import Navigation from './components/Navigation.js'
 import ViewModal from './components/ViewModal.js'
 
